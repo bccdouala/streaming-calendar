@@ -83,18 +83,18 @@ const formatTime = (dateString: string): string => {
 };
 
 // Calculate event duration in hours and minutes
-const getEventDuration = (start: string, end: string): string => {
-  const startDate = new Date(start);
-  const endDate = new Date(end);
-  const durationMs = endDate.getTime() - startDate.getTime();
-  const hours = Math.floor(durationMs / (1000 * 60 * 60));
-  const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+// const getEventDuration = (start: string, end: string): string => {
+//   const startDate = new Date(start);
+//   const endDate = new Date(end);
+//   const durationMs = endDate.getTime() - startDate.getTime();
+//   const hours = Math.floor(durationMs / (1000 * 60 * 60));
+//   const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
 
-  if (hours > 0) {
-    return `${hours}t ${minutes}min`;
-  }
-  return `${minutes}min`;
-};
+//   if (hours > 0) {
+//     return `${hours}h ${minutes}min`;
+//   }
+//   return `${minutes}min`;
+// };
 
 // Lifecycle hooks
 onMounted(() => {
@@ -140,9 +140,9 @@ onUnmounted(() => {
         <div v-for="event in nextEvents" :key="event.id" class="space-y-0">
           <p class="text-xl">
             {{ formatDate(event.start) }} | {{ formatTime(event.start) }}
-            <span class="text-lg opacity-80 ml-3">
+            <!-- <span class="text-lg opacity-80 ml-3">
               ({{ getEventDuration(event.start, event.end) }})
-            </span>
+            </span> -->
           </p>
           <h2 class="text-3xl pt-2 font-semibold">{{ event.summary }}</h2>
           <p class="text-xl">{{ event.description }}</p>

@@ -61,7 +61,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="backdrop-blur-md pt-52 pl-36 relative w-[1920px] h-[1080px] bg-cover bg-center bg-transparent text-black"
+    class="backdrop-blur-md pt-52 pl-36 relative w-[1920px] h-[1080px] bg-cover bg-center bg-transparent text-white"
   >
     <div class="pt-14">
       <!-- Current Time -->
